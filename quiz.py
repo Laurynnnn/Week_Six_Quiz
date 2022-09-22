@@ -144,6 +144,38 @@ person.work()
 # sleep, work, and code. The code method should print out the name of the person and the word "is coding in" 
 # and the programming language. Create an instance of the Programmer class and call all the methods.
 
+class Employee:
+    def __init__(self, name, age, salary):
+        self.name = name
+        self.age = age
+        self.salary = salary
+
+    def __repr__(self):
+        return f"Name: {self.name} \n Age: {self.age} \n Salary: {self.salary}"
+
+    def eat(self):
+        print("{} is eating".format(self.name))
+
+    def sleep(self):
+        print("{} is sleeping".format(self.name))
+
+    def work(self):
+        print("{} is working".format(self.name))
+
+class Programmer(Employee):
+    def __init__(self, name, age, salary, programming_language):
+        self.programming_language = programming_language
+        super().__init__(name, age, salary)
+
+    def code(self):
+        print("{} is coding in {}".format(self.name, self.programming_language))
+
+p = Programmer("Lauryn", 21, 9000000000, "python")
+p.eat()
+p.sleep()
+p.work()
+p.code()
+
 # create a class called Vehicle. The class should have the following attributes: make, model, and year. 
 # The class should have the following methods: start, stop, and drive. The start method should print out 
 # the make, model, and year of the vehicle and the word "is starting". The stop method should print out 
@@ -153,6 +185,38 @@ person.work()
 # have the following methods: start, stop, drive, and park. The park method should print out the make, model, 
 # year, and color of the car and the word "is parking". Create an instance of the Car class and call all the 
 # methods.
+
+class Vehicle:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def __repr__(self):
+        return f"Make: {self.make} \n Model: {self.model} \n Year: {self.year}"
+
+    def start(self):
+        print(" The {}, {}, {} is starting".format(self.make,self.model, self.year ))
+
+    def stop(self):
+        print(" The {}, {}, {} is stopping".format(self.make,self.model, self.year ))
+
+    def drive(self):
+        print(" The {}, {}, {} is driving".format(self.make,self.model, self.year ))
+
+class Car(Vehicle):
+    def __init__(self, make, model, year, color):
+        self.color = color
+        super().__init__(make, model, year)
+
+    def park(self):
+        print(" The {} {}, {}, {} is parking".format(self.color, self.make,self.model, self.year ))
+
+c = Car("Toyota", "BMW", "2010", "black")
+c.start()
+c.stop()
+c.drive()
+c.park()
 
 # create a class called Animal. The class should have the following attributes: name, color, and age. 
 # The class should have the following methods: eat, sleep, and make_sound. 
