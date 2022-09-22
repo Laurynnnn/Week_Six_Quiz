@@ -229,6 +229,39 @@ c.park()
 # The bark method should print out the name of the dog and the word "is barking". 
 # Create an instance of the Dog class and call all the methods.
 
+class Animal:
+    def __init__(self, name, color, age):
+        self.name = name
+        self.color = color
+        self.age = age
+        
+
+    def __repr__(self):
+        return f"Name: {self.name} \n Color: {self.color} \n Age: {self.age} "
+
+    def eat(self):
+        print("{} is eating".format(self.name))
+
+    def sleep(self):
+        print("{} is sleeping".format(self.name))
+
+    def make_sound(self):
+        print("{} is making a sound.".format(self.name))
+
+class Dog(Animal):
+    def __init__(self, name, color, age, breed):
+        self.breed = breed
+        super().__init__(name, color, age)
+
+    def bark(self):
+        print("{} is barking".format(self.name))
+
+dog = Dog("Boo", "brown", "10 months", "German shepherd")
+dog.eat()
+dog.sleep()
+dog.bark()
+dog.make_sound()
+
 # create a class of your choice. It should have at least 3 attributes and 3 methods where one of the methods 
 # is a static method. Implement polymorphism, encapsulation, and inheritance.
 
